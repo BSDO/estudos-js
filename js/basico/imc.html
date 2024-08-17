@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form  onsubmit="calcular(event)">
+
+            <label for="nome">Peso</label>
+            <input type="text" id="peso">
+            <label for="nome">Altura</label>
+            <input type="text" id="altura">
+    
+            <input type="submit" value="Calcular">
+
+        </form>
+     
+ 
+    </div>
+    <div class="">
+        <p id="resultado"></p>
+    </div>
+
+    <script>    
+
+        let imc;
+        let resultado;
+
+        function calcular(event){
+        
+            event.preventDefault();
+
+            let peso =  document.getElementById('peso').value;
+            let altura = parseFloat(document.getElementById('altura').value);
+
+            imc  = peso / (altura * altura);
+
+            document.querySelector('#resultado').innerText = 'imc' + imc
+
+            console.log('imc: ',imc)
+      
+        }
+
+
+
+
+    </script>
+</body>
+</html>

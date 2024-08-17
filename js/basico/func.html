@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="nome">Nota 1</label>
+        <input type="number" id="nota1">
+        <label for="nome">Nota 2</label>
+        <input type="number" id="nota2">
+        <label for="nome">Nota 3</label>
+        <input type="number" id="nota3">
+        <button>Calcular</button>
+    </div>
+    <div class="">
+        <p id="resultado"></p>
+    </div>
+    
+
+    <script>
+        function Media(nota1,nota2,nota3){
+
+
+            if (nota1.length == '' && nota2.length == '' && nota3.length == '') {
+                
+                alert('Preencha os campos');
+                return false
+               
+            }
+
+
+            let soma = (nota1 + nota2 + nota3 ) /  3;
+            let mensagem = ''
+
+            if(soma < 5){
+                memsagem = 'Voce reprovou'+" " + soma.toFixed(1).replace(',','.')
+            }
+            else if(soma <= 7){
+                mensagem = 'Recuperação' + " " +soma.toFixed(1).replace(',','.')
+            }
+            else{
+                mensagem ='Aprovado com sucesso' + " " +soma.toFixed(1).replace(',','.')
+            }
+
+
+            document.querySelector('#resultado').innerText = mensagem
+
+
+
+
+        } 
+
+
+        
+        document.querySelector('button').addEventListener('click',() =>{
+            let nota1 = parseInt(document.querySelector('input[id=nota1]').value);
+            let nota2 = parseInt(document.querySelector('input[id=nota2]').value);
+            let nota3 = parseInt(document.querySelector('input[id=nota3]').value);
+
+            Media(nota1,nota2,nota3)
+
+        })
+
+        // switch(valor){
+        //     case 1 :
+        //         valor
+        //         break;
+        //     case 2 :
+        //         valor;
+        //         break;
+        //     default
+        //         valor;
+        //         break
+        // }
+
+
+        // document.querySelector('body').style = 'background-color:red';
+
+
+
+        // let btnvalor = false
+        // document.querySelector('button').addEventListener('click',() =>{
+           
+
+        //     if(btnvalor === false){
+
+        //         document.querySelector('body').style = 'background-color:black';
+
+        //         btnvalor = true
+        //         console.log('Valor botão: ',btnvalor);
+        //     }else{
+        //         document.querySelector('body').style = 'background-color:white';
+        //         btnvalor = false
+        //     }  console.log('Valor botão: ',btnvalor);
+
+          
+        // });
+
+      
+        // var id = document.querySelector('#nome')
+        // var nome = prompt("Digite seu nome ? ");
+
+        // id.innerHTML = nome;
+
+
+        // let btn = document.createElement("button")
+        // btn.innerText = "sair"
+   
+        // btn.addEventListener('click',sair)
+
+        // id.appendChild(btn)
+
+
+        // function sair(){
+
+        //     let div = document.createElement('div')
+        //     div.innerText = 'Sair com sucesso.'
+
+        //     id.innerHTML = ''
+
+        //     id.appendChild(div)
+        // }
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
