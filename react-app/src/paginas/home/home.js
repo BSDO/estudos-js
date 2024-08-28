@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import Api from "../../servicos/api"
 import './style.css'
+
 export function Home (){
 
     const [filme,setFilmes] = useState([])
     const [loading,setLoading] = useState(true)
 
     useEffect(() => {
-        async function CarregarFilmes() {
+        async function CarregarFilmes() 
+        {
             const resposta = await Api.get("movie/now_playing",{
                 params : {
                     api_key : "d56c164f6c3a58992802c4ae001e25eb",
@@ -19,17 +21,13 @@ export function Home (){
 
                 }
             })
-            setFilmes(resposta.data.results)
+            setFilmes(resposta.data.results.slice(0,3))
             setLoading(false)
             
         }   
 
         CarregarFilmes();
-
-
     },[])
-
-
 
     return(<>
     
