@@ -17,13 +17,12 @@ export function Home (){
                 params : {
                     api_key : "d56c164f6c3a58992802c4ae001e25eb",
                     language : "pt-BR",
-                    page : 1,
+                    page : 2
 
                 }
             })
-            setFilmes(resposta.data.results.slice(0,3))
+            setFilmes(resposta.data.results.slice(0,20))
             setLoading(false)
-            
         }   
 
         CarregarFilmes();
